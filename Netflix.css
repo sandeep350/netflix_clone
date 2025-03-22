@@ -1,101 +1,161 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-body{
+
+body {
   background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
 }
-.mainNetflixContainer{
-  /* border: 2px solid red; */
+
+.mainNetflixContainer {
   position: relative;
   padding: 1rem 2rem;
-  
-  
 }
-.mainNetflixContainer::before{
+
+.mainNetflixContainer::before {
   content: "";
-  
-
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
-nav{
-  /* border: 2px solid green; */
-  height:20vh;
+
+nav {
+  height: 12vh;
 }
-.upperNavBar{
-  /* border: 2px solid blue; */
+
+.upperNavBar {
   display: flex;
   height: 50%;
+  align-items: center;
 }
-.lowerNavBar{
-  border: 2px solid red;
-  height: 50%;
-  color: #fff;
-  display:flex;
-  justify-content: center;
 
+.lowerNavBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  height: 50%;
+  display: flex;
+  justify-content: center;
 }
-.menuList{
-  border:2px solid green;
-  width:30%;
+
+.menuList {
+  width: 40%;
   list-style: none;
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
   border-radius: 50px;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
 }
+
+.menuListItems {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menuListItems:hover {
+  color: red;
+}
+
 .BannerSection {
-  border: 2px solid red;
   height: 90vh;
   background-image: url("IN-en-20250310-TRIFECTA-perspective_739387a0-ff14-44ed-a5af-36e5aa4d236e_small.jpg");
   background-size: cover;
   background-position: center;
   margin-top: 2rem;
-  border-radius: 10px; /* Added a valid border-radius */
-  opacity: 1; /* Keeping the banner visible */
-  position: relative; /* Changed to relative to keep text on top */
-}
-.overlay{
-  height:100%;
-  width:100%;
-  background-image: linear-gradient(transparent,rgba(0,0,0,.3));
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.upperNavBarLeftSection{
-  /* border: 2px solid red; */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+}
+
+.bannerContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.bannerContainer h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.getStartedButton {
+  background-color: red;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.getStartedButton:hover {
+  background-color: darkred;
+}
+
+.upperNavBarLeftSection {
   width: 50%;
 }
-.Netflix_logo{
-  width: 29%;
+
+.Netflix_logo {
+  width: 20%;
 }
-.upperNavBarRightsection{
-  /* border: 2px solid blue; */
+
+.upperNavBarRightSection {
   width: 50%;
-}
-.navBarButtonContainer{
-  display:flex;
+  display: flex;
   justify-content: flex-end;
-  align-items: center;
-  height:100%;
 }
-.language_button{
-  display:flex;
-  padding: .5rem .8rem;
+
+.navBarButtonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.language_button {
+  display: flex;
+  padding: 0.5rem 0.8rem;
   border-radius: 50px;
   background: transparent;
   border: 1px solid white;
-  outline: none;
   color: white;
-  
 }
-.signInButton{
+
+.signInButton {
   background-color: #fff;
-  padding: .5rem .8rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 50px;
   border: none;
-  outline: none;
   margin-left: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.language_button p{
-  margin-left: 8px;
+
+.signInButton:hover {
+  background-color: lightgray;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
 }
