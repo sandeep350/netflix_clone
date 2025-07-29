@@ -1,3 +1,4 @@
+/* Reset some default styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,22 +6,17 @@
 }
 
 body {
-  background-color: black;
-  font-family: Arial, sans-serif;
-  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #fff;
 }
 
-.mainNetflixContainer {
-  padding: 1rem 2rem;
-}
-
-nav {
-  height: 12vh;
-  position: fixed;
+/* Navigation Styles */
+.navContainer {
+  padding: 20px 40px;
+  background-color: transparent;
+  position: absolute;
   width: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
   z-index: 10;
 }
 
@@ -28,11 +24,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50%;
-  padding: 1rem 2rem;
 }
 
-.Netflix_logo {
+.UpperNavBarLeftSection .Netflix_logo {
   width: 120px;
 }
 
@@ -41,148 +35,152 @@ nav {
   gap: 10px;
 }
 
-.language_button, .signInButton {
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  border: 1px solid white;
-  background: transparent;
-  color: white;
+.language_button,
+.signInButton {
+  background-color: rgba(51, 51, 51, 0.7);
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.signInButton {
-  background-color: white;
-  color: black;
-  font-weight: bold;
-}
-
+.language_button:hover,
 .signInButton:hover {
-  background-color: lightgray;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Lower Navigation */
 .lowerNavBar {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem 0;
+  margin-top: 15px;
 }
 
 .menuList {
-  display: flex;
   list-style: none;
+  display: flex;
   gap: 20px;
+  font-size: 14px;
 }
 
 .menuListItems {
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .menuListItems:hover {
-  color: red;
+  color: #e50914;
 }
 
+/* Banner Section */
 .BannerSection {
-  height: 90vh;
-  background: url("banner.jpg") no-repeat center center/cover;
+  position: relative;
+  height: 100vh;
+  background: url('banner.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
-  margin-top: 12vh;
 }
 
-.overlay {
+.BannerSection .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
 .bannerContainer {
   position: relative;
   z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 .bannerContainer h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
+}
+
+.bannerContainer p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .getStartedButton {
-  background-color: red;
-  padding: 0.8rem 1.5rem;
+  background-color: #e50914;
+  color: white;
   border: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s ease;
 }
 
 .getStartedButton:hover {
-  background-color: darkred;
-  transform: scale(1.05);
+  background-color: #f6121d;
 }
 
-/* Movie Carousel */
+/* Carousel Section */
 .carouselSection {
-  width: 100%;
-  padding: 2rem 0;
-  display: flex;
-  justify-content: center;
-}
-
-.swiper {
-  width: 80%;
-  height: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 50px 40px;
+  background-color: #111;
 }
 
 .swiper-slide img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
+.swiper-slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+  background-color: #888;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+
+/* Footer */
 footer {
+  background-color: #111;
   text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  font-size: 14px;
+  color: #aaa;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-  .Netflix_logo {
-    width: 100px;
-  }
-
-  .menuList {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .BannerSection {
-    height: 60vh;
-  }
-
   .bannerContainer h1 {
     font-size: 2rem;
   }
 
-  .swiper {
-    width: 90%;
-    height: 250px;
+  .menuList {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navBarButtonContainer {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .getStartedButton {
+    width: 100%;
   }
 }
